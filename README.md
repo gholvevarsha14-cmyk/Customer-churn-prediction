@@ -40,28 +40,27 @@ Models were evaluated using:
 - Confusion Matrix
 - Classification Report
 
+## 🤖 Machine Learning Models
+
+The following models were used for prediction:
+
+- Logistic Regression
+- Random Forest
+- XGBoost
+
 ## 🎯 Results
-Four classification models were trained and evaluated on 768 patient records (Pima Indians Diabetes dataset) using an 80/20 train-test split:
 
-| Model | Accuracy |
-|---|---|
-| Logistic Regression | 75.3% |
-| Random Forest | ~75% |
-| SVM | 73.4% |
-| KNN | 69.5% |
+Three classification models were trained and evaluated on 7,043 telecom customer records using an 80/20 train-test split:
 
-**Logistic Regression achieved the best overall performance**, with the classification report showing 81% precision for non-diabetic cases and 65% precision for diabetic cases.
+| Model               | Accuracy | Recall | ROC-AUC |
+| ------------------- | -------- | ------ | ------- |
+| Logistic Regression | 82.1%    | 55.2%  | 0.735   |
+| Random Forest       | 78.9%    | 47.7%  | 0.690   |
+| XGBoost              | 78.3%    | 49.1%  | 0.690   |
 
-**Feature Importance (via Random Forest):**
+**Logistic Regression achieved the best overall performance**, with the highest accuracy and ROC-AUC among the three models.
 
-| Feature | Importance |
-|---|---|
-| Plasma Glucose Concentration | 25.4% |
-| Body Mass Index (BMI) | 16.2% |
-| Age | 13.9% |
-| Diabetes Pedigree Function | 12.5% |
-
-**Key Insight:** Glucose level is by far the strongest predictor of diabetes risk, followed by BMI and age — consistent with established clinical understanding of Type 2 diabetes risk factors.
+**Key Insight:** Feature importance analysis identified **customer tenure** and **monthly charges** as the strongest predictors of churn — customers with shorter tenure and higher monthly bills are at greatest risk of leaving, a useful signal for targeted retention campaigns.
 
 ## 💡 Business Insight
 The analysis shows that customers with higher monthly charges and shorter tenure are more likely to churn. Companies can use this information to improve retention strategies.
